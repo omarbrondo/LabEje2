@@ -1,15 +1,22 @@
 public abstract class Viajes {
     protected static final double TARIFA_MINIMA = 150;
     protected static int totalViajes = 0;
+    protected static double totalGastado = 0;
 
     public static int getTotalViajes() {
         return totalViajes;
     }
 
-    public void registrarViaje() {
+    public static double getTotalGastado() {
+        return totalGastado;
+    }
+
+    public void registrarViaje(double tarifa) {
         totalViajes++;
+        totalGastado += tarifa;
     }
 }
+
 
 
 class Colectivo extends Viajes implements Transporte {
@@ -23,7 +30,7 @@ class Colectivo extends Viajes implements Transporte {
     @Override
     public void iniciarViaje() {
         System.out.println("Colectivo iniciando viaje...");
-        registrarViaje();
+        registrarViaje(tarifa);
     }
 
 
@@ -49,7 +56,7 @@ class Tren extends Viajes implements Transporte {
     @Override
     public void iniciarViaje() {
         System.out.println("Tren iniciando viaje...");
-        registrarViaje();
+        registrarViaje(tarifa);
     }
 
     @Override
@@ -74,7 +81,7 @@ class Subte extends Viajes implements Transporte {
     @Override
     public void iniciarViaje() {
         System.out.println("Subte iniciando viaje...");
-        registrarViaje();
+        registrarViaje(tarifa);
     }
 
     @Override

@@ -20,7 +20,15 @@ public class main {
         colectivo.iniciarViaje();
         System.out.println("Tarifa Colectivo: $" + colectivo.calcularTarifa());
         colectivo.detenerViaje();
+        
+        
+        colectivo.iniciarViaje();
+        System.out.println("Tarifa Colectivo: $" + colectivo.calcularTarifa());
+        colectivo.detenerViaje();
+        
 
         System.out.println("Total de viajes realizados: " + Viajes.getTotalViajes());
+        System.out.println("Total gastado en viajes: $" + Viajes.getTotalGastado());
+
     }
 }
